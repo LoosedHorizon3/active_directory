@@ -41,3 +41,25 @@
         """
         Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
         """
+
+# AD Forrest
+1. From the Management Client, enter the PSSession for DC-1
+    """
+    Import-Module ADDSDeployment
+    Install-ADDSForrest
+    """
+2. I gave my forrest the name of homelab.local and enter a Safe Mode password
+3. After the forrest is installed, the DNS settings get set to a loopback address and will need to be reset to the DNS IP address (We will use the DC-1 IP address for DNS)
+4. From the management client:
+    - Get the interface index for DC-1
+        """
+        Get-NetIPAddress -IPAddress {IP address of DC-1}
+        """
+    - InterfaceIndex: 6
+5. Setting the DNS to the IP address of DC-1 and confirm the change has taken place
+    """
+    Set-DnsClientServerAddress -InterfaceIndex {Interface Index number} -ServerAddresses {IP address of DC-1}
+    
+    Get-DNSClinetServerAddress
+    """
+    
