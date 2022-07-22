@@ -1,0 +1,37 @@
+{
+    "domain": "homelab.local",
+
+    "groups":[
+        {
+            "name": "Employees"
+        },
+        {
+            "name": "Information_Technology"
+        },
+        {
+            "name": "Finance"
+        },
+        {
+            "name": "Office"
+        }
+    ],
+
+    "users": [
+        {
+            "name": "Dan Man",
+            "password": "P@ssw0rd!!",
+            "groups":[
+                "Employees",
+                "Office"
+            ]
+        },
+        {
+            "name": "Hennry Jihn",
+            "password": "P@ssw0rd123",
+            "groups":[
+                "Employees",
+                "Office"
+            ]
+        }
+    ]
+}
