@@ -12,7 +12,7 @@
             "name": "Finance"
         },
         {
-            "name": "Office"
+            "name": "Office_Admin"
         }
     ],
 
@@ -22,7 +22,7 @@
             "password": "P@ssw0rd!!",
             "groups":[
                 "Employees",
-                "Office"
+                "Office_Admin"
             ]
         },
         {
@@ -30,7 +30,7 @@
             "password": "P@ssw0rd123",
             "groups":[
                 "Employees",
-                "Office"
+                "Office_Admin"
             ]
         }
     ]

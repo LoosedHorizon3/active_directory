@@ -100,3 +100,20 @@
     Copy-Item .\ad_schema.json -ToSession $dc {file path to store on DC-1}
     Copy-Item .\gen_ad.ps1 -ToSession $dc {file path to store on DC-1}
     """
+
+# Creating an Auto generating Vlun AD script
+1. Created a a couple of text files to help generate a bunch of random AD accounts
+    - Created a text file for GivenNames
+    - Created a text file for Surnames
+    - Created a text file for Passwords (This was a small list generated from rockyou.txt)
+    - Created a text file for AD Groups
+
+2. Created a PowerShell to test the creation of the random users
+    - This script calls on the text files listed above
+    - The script will pick 10 random AD groups from the AD Group text file
+    - The script will create 100 AD users
+
+3. Modified the "gen_ad.ps1" script to create the 100 random users and groups
+    - Ran into an issue with the passwords as the text file does not contain strong passwords
+    - Add a section to weaken the password policy on the domain controller so no issues could be had
+    - Without the weakening of the password policy the user accounts get created but have also been disabled by the DC
